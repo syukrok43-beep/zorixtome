@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zorixtome</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="biskui2.jpeg">
+</head>
+<body>
+    <div class="header">
+         <a href="index.html" class="header-logo">
+            <img src="biskui2.jpeg" alt="zorixtome" class="logo-img">
+        </a>
+        <a href="index.html" class="header-title"><b>zorixtome</b></a>
+        <div class="header-nav">
+            <a href="#" class="nav-link active-nav" data-category="all">new</a>
+            <span class="sep">|</span>
+            <a href="#" class="nav-link" data-category="teknologi">teknologi</a>
+            <span class="sep">|</span>
+            <a href="#" class="nav-link" data-category="business">business</a>
+            <span class="sep">|</span>
+            <a href="#" class="nav-link" data-category="all">all</a>
+            <span class="sep">|</span>
+            <a href="#" id="navAbout">about</a>
+        </div>
+    </div>
+
+    <!-- ================== HALAMAN UTAMA (BERANDA) ================== -->
+    <div id="homePage">
+        <div class="content">
+            <table class="article-table" id="articleTableBody">
+                <!-- Artikel dirender oleh JavaScript -->
+            </table>
+            <div id="paginationContainer" class="pagination hidden"></div>
+            <div id="noArticleMessage" class="empty-message hidden">
+                <p>Belum ada artikel di kategori ini.</p>
+                <p><a id="msgBackToAll">Lihat semua artikel</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#">Guidelines</a> | <a href="#">FAQ</a> | <a href="#">RSS</a>
+            <br>
+            <div class="footer-powered">
+                <span>Powered by</span>
+                <a href="https://www.debian.org" target="_blank" rel="noopener">
+                    <img src="https://www.debian.org/logos/openlogo-nd-100.png" alt="Debian" class="footer-logo">
+                </a>
+                <span class="footer-sep">+</span>
+                <a href="https://www.domainesia.com" target="_blank" rel="noopener">
+                    <img src="domainesia.png" alt="Domainesia" class="footer-logo">
+                </a>
+            </div>
+            <br>
+            <small>2025 zorixtome &mdash; Privacy &mdash; Policy</small>
+        </div>
+    </div>
+
+    <!-- ================== HALAMAN DETAIL ARTIKEL ================== -->
+    <div id="detailPage" class="hidden">
+        <div class="detail-container">
+            <a id="detailBackBtn" class="detail-back">Kembali ke daftar artikel</a>
+            <h1 class="detail-title" id="detailTitle">Judul Artikel</h1>
+            <div class="detail-meta">
+                <span id="detailDate">Tanggal</span>
+            </div>
+            <div class="detail-body" id="detailBody">
+                <!-- konten diisi JavaScript -->
+            </div>
+            <div class="detail-signature">
+                ditulis oleh Galih Satriyo Negoro<br>
+                <a href="mailto:gsn-workstation@proton.me">gsn-workstation@proton.me</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================== HALAMAN ABOUT ================== -->
+    <div id="aboutPage" class="hidden">
+        <div class="about-container">
+            <a id="aboutBackBtn" class="detail-back">Kembali ke beranda</a>
+            <h1 class="about-title">Tentang Blog Ini</h1>
+            
+            <div class="about-profile">
+                <div class="profile-photo">
+                    <img src="profile.jpeg" alt="Foto Profil" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <p class="profile-name"><b>Galih Satriyo Negoro</b></p>
+                    <p class="profile-bio">Pengembang Perangkat Lunak dan Spesialis Core Blockchain</p>
+                    <a href="mailto:negorogalih49@gmail.com" class="profile-email">negorogalih49@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="about-body">
+                <p>Selamat datang di blog pribadi.</p>
+                <p>Blog ini berisi catatan teknis seputar ilmu komputer, dengan fokus pada sistem tingkat rendah seperti kernel, blockchain, sistem grafis, dan arsitektur komputer.</p>
+                <p>Selain itu, blog ini juga membahas pengetahuan seputar bisnis modern yang berbeda dari bisnis konvensional. Artikel di sini berfokus pada bagaimana solusi teknologi maupun non-teknologi dapat menciptakan pasar baru, alih-alih mencari peluang di pasar yang sudah ada.</p>
+                <p>Kita yang tumbuh di era komputasi sangat beruntung karena pergerakan dunia berbasis pada teknologi komputasi yang efisien. Hampir semua keputusan bisnis saat ini bertumpu pada teknologi.</p>
+                <p>Terima kasih sudah mampir. Semoga para pengunjung memahami bahwa mendisrupsi pasar adalah bagian dari kemajuan dan solusi atas stagnasi.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
