@@ -1,7 +1,6 @@
 (function() {
 
     var articlesData = [];
-
     var homePage = document.getElementById('homePage');
     var detailPage = document.getElementById('detailPage');
     var aboutPage = document.getElementById('aboutPage');
@@ -19,9 +18,6 @@
     var currentPage = 1;
     var articlesPerPage = 20;
 
-    // =============================================
-    // MUAT ARTIKEL DARI JSON
-    // =============================================
     function loadArticles() {
         fetch('articles.json')
             .then(function(response) {
@@ -40,18 +36,11 @@
             });
     }
 
-    // =============================================
-    // SEMBUNYIKAN SEMUA HALAMAN
-    // =============================================
     function hideAllPages() {
         homePage.classList.add('hidden');
         detailPage.classList.add('hidden');
         aboutPage.classList.add('hidden');
     }
-
-    // =============================================
-    // SET NAVIGASI AKTIF
-    // =============================================
     function setActiveNav(category) {
         var navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(function(link) {
@@ -61,10 +50,6 @@
             }
         });
     }
-
-    // =============================================
-    // RENDER DAFTAR ARTIKEL DENGAN PAGINATION
-    // =============================================
     function renderArticleList(category, page) {
         var filtered;
 
@@ -125,8 +110,6 @@
 
             articleTableBody.appendChild(tr);
         });
-
-        // Klik judul artikel -> buka detail
         document.querySelectorAll('.article-title-link').forEach(function(link) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -134,8 +117,6 @@
                 showDetail(id);
             });
         });
-
-        // Upvote (hanya efek visual, tidak mengubah data)
         document.querySelectorAll('.article-upvote').forEach(function(upvote) {
             upvote.addEventListener('click', function() {
                 if (this.classList.contains('voted')) {
@@ -145,14 +126,8 @@
                 }
             });
         });
-
-        // Render pagination
         renderPagination(category, page, totalPages);
     }
-
-    // =============================================
-    // RENDER TOMBOL PAGINATION
-    // =============================================
     function renderPagination(category, currentPage, totalPages) {
         var container = document.getElementById('paginationContainer');
 
@@ -164,8 +139,6 @@
         container.classList.remove('hidden');
 
         var html = '';
-
-        // Tombol Previous
         if (currentPage > 1) {
             html += '<a href="#" class="page-link" data-page="' + (currentPage - 1) + '">Previous</a>';
         } else {
@@ -173,8 +146,6 @@
         }
 
         html += '<span class="page-sep">|</span>';
-
-        // Nomor halaman
         for (var i = 1; i <= totalPages; i++) {
             if (i === currentPage) {
                 html += '<span class="page-current">' + i + '</span>';
@@ -187,7 +158,6 @@
             }
         }
 
-        // Tombol Next
         html += '<span class="page-sep">|</span>';
         if (currentPage < totalPages) {
             html += '<a href="#" class="page-link" data-page="' + (currentPage + 1) + '">Next</a>';
@@ -196,8 +166,6 @@
         }
 
         container.innerHTML = html;
-
-        // Event listener tombol pagination
         document.querySelectorAll('.page-link').forEach(function(link) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -207,10 +175,6 @@
             });
         });
     }
-
-    // =============================================
-    // PINDAH KATEGORI
-    // =============================================
     function switchCategory(category) {
         currentCategory = category;
         setActiveNav(category);
@@ -218,10 +182,6 @@
         hideAllPages();
         homePage.classList.remove('hidden');
     }
-
-    // =============================================
-    // TAMPILKAN DETAIL ARTIKEL
-    // =============================================
     function showDetail(id) {
         var article = articlesData.find(function(a) {
             return a.id === id;
@@ -236,10 +196,6 @@
         hideAllPages();
         detailPage.classList.remove('hidden');
     }
-
-    // =============================================
-    // TAMPILKAN ABOUT
-    // =============================================
     function showAbout() {
         hideAllPages();
         aboutPage.classList.remove('hidden');
@@ -248,18 +204,10 @@
             link.classList.remove('active-nav');
         });
     }
-
-    // =============================================
-    // KEMBALI KE BERANDA
-    // =============================================
     function backToHome() {
         hideAllPages();
         homePage.classList.remove('hidden');
     }
-
-    // =============================================
-    // EVENT LISTENER
-    // =============================================
     document.querySelectorAll('.nav-link').forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -267,30 +215,32 @@
             switchCategory(category);
         });
     });
-
     navAbout.addEventListener('click', function(e) {
         e.preventDefault();
         showAbout();
     });
-
     detailBackBtn.addEventListener('click', function(e) {
         e.preventDefault();
         backToHome();
     });
-
     aboutBackBtn.addEventListener('click', function(e) {
         e.preventDefault();
         backToHome();
     });
-
     msgBackToAll.addEventListener('click', function(e) {
         e.preventDefault();
         switchCategory('all');
     });
-
-    // =============================================
-    // INISIALISASI
-    // =============================================
-    loadArticles();
+    loadArticles();function copyAddress() {
+    const addr = document.getElementById('walletAddress').innerText.trim();
+    navigator.clipboard.writeText(addr).then(function() {
+        const btn = document.getElementById('btnCopyAddr');
+        const originalText = btn.textContent;
+        btn.textContent = 'tersalin';
+        setTimeout(function() {
+            btn.textContent = originalText;
+        }, 1500);
+    });
+}
 
 })();
