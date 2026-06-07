@@ -540,3 +540,67 @@ body {
         font-size: 28px;
     }
 }
+
+.about-donation {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ccc;
+}
+
+.about-donation h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+}
+
+.donation-box {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.donation-box .label-addr {
+    font-size: 0.7rem;
+    color: #888;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.donation-addr-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.donation-logo img {
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+}
+
+.donation-box .wallet-address {
+    color: #555;
+    word-break: break-all;
+}
+
+.btn-copy {
+    background: none;
+    border: none;
+    font-size: 0.7rem;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+
+.btn-copy:hover {
+    color: #333;
+}
+
+.donation-note {
+    margin-top: 6px;
+    font-size: 0.7rem;
+    color: #aaa;
+}
