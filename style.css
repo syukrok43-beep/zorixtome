@@ -1,4 +1,4 @@
-/* ========== RESET & GLOBAL ========== */
+
 * {
     margin: 0;
     padding: 0;
@@ -96,7 +96,7 @@ body {
     font-size: 12px;
 }
 
-/* ========== KONTEN UTAMA ========== */
+
 .content {
     max-width: 900px;
     margin: 0 auto;
@@ -189,7 +189,6 @@ body {
     text-decoration: underline;
 }
 
-/* ========== PAGINATION ========== */
 .pagination {
     text-align: center;
     padding: 14px 0;
@@ -222,7 +221,7 @@ body {
     margin: 0 2px;
 }
 
-/* ========== HALAMAN DETAIL ARTIKEL ========== */
+
 .detail-container {
     background-color: #f6f6ef;
     padding: 20px 25px;
@@ -315,7 +314,7 @@ body {
     text-decoration: underline;
 }
 
-/* ========== HALAMAN ABOUT ========== */
+
 .about-container {
     background-color: #f6f6ef;
     padding: 20px 25px;
@@ -335,7 +334,6 @@ body {
     border-bottom: 1px solid #d0d0d0;
 }
 
-/* ========== PROFIL ABOUT ========== */
 .about-profile {
     display: flex;
     align-items: center;
@@ -402,7 +400,6 @@ body {
     text-decoration: underline;
 }
 
-/* ========== BODY ABOUT ========== */
 .about-body {
     font-size: 14px;
     line-height: 1.7;
@@ -419,7 +416,6 @@ body {
     color: #000000;
 }
 
-/* ========== PESAN KOSONG ========== */
 .empty-message {
     text-align: center;
     padding: 50px 20px;
@@ -437,7 +433,6 @@ body {
     cursor: pointer;
 }
 
-/* ========== FOOTER ========== */
 .footer {
     text-align: center;
     padding: 14px;
@@ -479,12 +474,10 @@ body {
     font-size: 9px;
 }
 
-/* ========== UTILITY ========== */
 .hidden {
     display: none !important;
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 650px) {
     .header {
         padding: 4px 6px;
