@@ -231,7 +231,11 @@
         e.preventDefault();
         switchCategory('all');
     });
-    loadArticles();function copyAddress() {
+    loadArticles();
+    
+
+})();
+function copyAddress() {
     const addr = document.getElementById('walletAddress').innerText.trim();
     navigator.clipboard.writeText(addr).then(function() {
         const btn = document.getElementById('btnCopyAddr');
@@ -242,5 +246,3 @@
         }, 1500);
     });
 }
-
-})();
