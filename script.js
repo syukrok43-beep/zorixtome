@@ -235,14 +235,16 @@
     
 
 })();
-function copyAddress() {
-    const addr = document.getElementById('walletAddress').innerText.trim();
-    navigator.clipboard.writeText(addr).then(function() {
-        const btn = document.getElementById('btnCopyAddr');
-        const originalText = btn.textContent;
-        btn.textContent = 'tersalin';
-        setTimeout(function() {
-            btn.textContent = originalText;
-        }, 1500);
-    });
-}
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'btnCopyAddr') {
+        var addr = document.getElementById('walletAddress').innerText.trim();
+        navigator.clipboard.writeText(addr).then(function() {
+            var btn = document.getElementById('btnCopyAddr');
+            var originalText = btn.textContent;
+            btn.textContent = 'tersalin';
+            setTimeout(function() {
+                btn.textContent = originalText;
+            }, 1500);
+        });
+    }
+});
